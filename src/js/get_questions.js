@@ -48,7 +48,7 @@ get_questions();
 
 // User get a single question
 
-fetch("/questions/"+localStorage.getItem("question_id"), {
+fetch("http://127.0.0.1:5000/api/v2/questions/"+localStorage.getItem("question_id"), {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ fetch("/questions/"+localStorage.getItem("question_id"), {
 
 // Userr can modify a question
 function modifyQuestion(card){
-    fetch("/questions/"+localStorage.getItem("question_id"), {
+    fetch("http://127.0.0.1:5000/api/v2/questions/"+localStorage.getItem("question_id"), {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -95,7 +95,7 @@ function toJSON(card) {
 
 // User delete a question
 function deleteQuestion(question_id){
-    fetch("/questions/"+question_id, {
+    fetch("http://127.0.0.1:5000/api/v2/questions/"+question_id, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
