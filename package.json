@@ -1,0 +1,25 @@
+{
+  "name": "stackoverflow_lite_front-end",
+  "version": "1.0.0",
+  "description": "StackOverflow-lite is a platform where people can ask questions and provide answers. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch & live-server src/",
+    "watch": "webpack --watch",
+    "build": "webpack --config wepack.config.js"
+  },
+  "author": "Arnold Osoro",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-stage-2": "^6.24.1",
+    "live-server": "^1.2.0",
+    "webpack": "^4.18.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
