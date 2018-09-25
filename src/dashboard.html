@@ -24,30 +24,32 @@
     <!-- Main Showcase -->
     <main>
         <a href="question.html" class="btn">Post a Question</a>
-        <div class="container-1">
-            <div class="col-75">
-                <h3>My Question | Answer Registry</h3>
-                <hr>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
+        <div id="questions">
+            <div class="container-1">
+                <div class="col-75">
+                    <h3>My Question | Answer Registry</h3>
+                    <hr>
+                    <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
+                    <table>
+                        <thead>
+                            <th>Question ID</th>
                             <th>Question</th>
                             <th>Date Posted</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="questions"></tr>
-                           
-                    </tbody>
-                </table>
+                            <th>Modify</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#" class="previous">&laquo; Previous </a>
+                <a href="#" class="next">Next &raquo;</a>
             </div>
-            <a href="#" class="previous">&laquo; Previous </a>
-            <a href="#" class="next">Next &raquo;</a>
         </div>
     </main>
-    <script src="./public/dist/get_questions.bundle.js></script>
+    <script src="./public/dist/get_questions.bundle.js"></script>
+    <script src="./public/dist/single_question.bundle.js"></script>
+    <script src="./public/dist/search.bundle.js"></script>
 </body>
 </html>
 

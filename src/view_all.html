@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100, 200,300,400,500,600,700,
     800,900|Coromorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="main.js"></script>
 </head>
 <body>
@@ -27,30 +28,27 @@
         <div class="col-50">
             <h2>Questions | Answers Registry</h2>
             <hr>
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Questions..." title="Type in a Question">
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th style="width: 30%">Question</th>
-                    <th>Date Posted</th>
-                    <th>Posted By</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td id="question_id">1</td>
-                    <td id="question">How to install Linux LTS 18.0</td>
-                    <td id="date_posted">10th August 2018</td>
-                    <td>Arnold Osoro</td>
-                    <td><a href="view.html">View</a></td>
-                </tr>
-               
-            </table>
+            <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
+            <div id="questions">
+                <table>
+                    <thead>
+                        <th>Question ID</th>
+                        <th style="width: 30%">Question</th>
+                        <th>Date Posted</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody> 
+                </table>
+            </div>
         </div>
         <a href="#" class="previous">&laquo; Previous </a>
         <a href="#" class="next">Next &raquo;</a>
 
     </main>
     <script src="./public/dist/get_questions.bundle.js"></script>
+    <script src="./public/dist/search.bundle.js"></script>
 </body>
 </html>
 
