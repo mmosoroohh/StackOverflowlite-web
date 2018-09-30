@@ -9,7 +9,8 @@ module.exports = {
         get_questions: "./src/js/get_questions.js",
         single_question: "./src/js/singleQuestion.js",
         answer:"./src/js/answer.js",
-        search:"./src/js/search.js"
+        search:"./src/js/search.js",
+        display_questions:"./src/js/displayquestions.js"
     },
     output: {
         path: path.resolve(__dirname, "src/public/dist"),

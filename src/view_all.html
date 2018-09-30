@@ -17,9 +17,11 @@
         <a href="index.html" class="header-brand">StackOverflow-lite</a>
         <nav>
             <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="view_all.html">Questions</a></li>
-                <li><a href="signin.html">Sign Out</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="signin.html">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -29,25 +31,19 @@
             <h2>Questions | Answers Registry</h2>
             <hr>
             <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
-            <div id="questions">
+            <div >
                 <table>
-                    <thead>
-                        <th>Question ID</th>
-                        <th style="width: 30%">Question</th>
-                        <th>Date Posted</th>
-                        <th>Action</th>
-                    </thead>
-                    <tbody>
-
-                    </tbody> 
+                    <tbody id="tab">
+                    </tbody>
                 </table>
+            </div>
             </div>
         </div>
         <a href="#" class="previous">&laquo; Previous </a>
         <a href="#" class="next">Next &raquo;</a>
 
     </main>
-    <script src="./public/dist/get_questions.bundle.js"></script>
+    <script src="./public/dist/display_questions.bundle.js"></script>
     <script src="./public/dist/search.bundle.js"></script>
 </body>
 </html>

@@ -28,7 +28,7 @@ signin.addEventListener('click', function(e) {
         .catch(error => console.error('Error '+ error))
         .then(user => {console.log(user);
             setItems(user.token);
-            // authSuccessful();
+            window.location.href = "/dashboard.html";
         })
     } else {
         let err = document.getElementById('err-message')
@@ -36,6 +36,7 @@ signin.addEventListener('click', function(e) {
         err.style.color = 'black';
         err.innerHTML = user.message;
         console.log("All fields are required!")
+        window.location.href = "/signin.html"
     }
 })
         

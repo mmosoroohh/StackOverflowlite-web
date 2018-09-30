@@ -17,35 +17,23 @@
             <ul>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="view_all.html">Questions</a></li>
-                <li><a href="signout.html">Sign Out</a></li>
+                <li><a href="signin.html">Sign Out</a></li>
             </ul>
         </nav>
     </header>
     <!-- Main Showcase -->
     <main>
         <a href="question.html" class="btn">Post a Question</a>
-        <div id="questions">
-            <div class="container-1">
-                <div class="col-75">
-                    <h3>My Question | Answer Registry</h3>
-                    <hr>
-                    <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
-                    <table>
-                        <thead>
-                            <th>Question ID</th>
-                            <th>Question</th>
-                            <th>Date Posted</th>
-                            <th>Modify</th>
-                            <th>Delete</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+    
+            <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
+            <h3>My Questions Registry</h3>
+            <div class="card" style="align-content: left">
+                <div id="tab">
                 </div>
-                <a href="#" class="previous">&laquo; Previous </a>
-                <a href="#" class="next">Next &raquo;</a>
             </div>
-        </div>
+            <a href="#" class="previous">&laquo; Previous </a>
+            <a href="#" class="next">Next &raquo;</a>
+        
     </main>
     <script src="./public/dist/get_questions.bundle.js"></script>
     <script src="./public/dist/single_question.bundle.js"></script>

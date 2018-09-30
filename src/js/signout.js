@@ -4,7 +4,7 @@ function signout()	{
 		method: "POST",
 		headers: {
 			'Content-Type': 'application/json',
-			'Authorization': 'Bearer '+ localStorage.getItem('token')
+			'Authorization': 'Bearer '+ localStorage.removeItem('token')
 		}
 	})
 	.then((response) => {
