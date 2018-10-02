@@ -32,11 +32,10 @@ function loadAnswers(){
                 let content = `
                     ${data.Answers.map(answer => `
                     <div>
-                        <h5 style="color:grey; font-size:10px">${ answer.date_posted }</h5>
                         <span>
                             ${ answer.answer }
                         </span>
-                        <i onclick="myfunction(this)" class="fa fa-thumbs-up"></i>
+                        <h5 style="color:grey; font-size:15px; text-align: right">Posted by: ${ answer.name }</h5>
                     </div>
                     `).join("")
                     }

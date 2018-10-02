@@ -17,26 +17,20 @@
         <a href="index.html" class="header-brand">StackOverflow-lite</a>
         <nav>
             <ul>
-                <li><a href="view_all.html">Questions</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a class="active" href="view_all.html">Questions</a></li>
+                <li><a href="signin.html">Sign Out</a></li>
             </ul>
         </nav>
     </header>
     <!-- Main Showcase -->
     <main>
         <div class="col-50">
-            <h2>Questions | Answers Registry</h2>
-            <hr>
+            <h2>Questions Registry</h2>
             <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
-            <div >
-                <table>
-                    <tbody id="tab">
-                    </tbody>
-                </table>
-            </div>
+            <br/>
+            <hr>
+            <div id="tab">
             </div>
         </div>
         <a href="#" class="previous">&laquo; Previous </a>

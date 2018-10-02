@@ -15,10 +15,11 @@ function display_questions() {
             console.log(new_data[i]["id"]);
             // node.innerHTML = `
             var my_node = `
-            <tr>
-                    <td>${new_data[i]["question"]}</td>
-                    <td style="font-size:10px">${new_data[i]["date_posted"]}</td>
-                </tr>`;
+            <div class="card">
+                <span><a href="view.html?id=${new_data[i]['id']}">${new_data[i]["question"]}</a></span>
+                <h5 style="color:grey; font-size:10px">${new_data[i]["date_posted"]}</h5>
+                <p style="text-align:right; font-size:10px">Posted By: ${new_data[i]["name"]}</p>
+            </div>`;
             // node.classList.add("item");
             parentNode.insertAdjacentHTML('afterbegin', my_node);
             // parentNode.appendChild(node)
