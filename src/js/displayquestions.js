@@ -1,0 +1,30 @@
+window.addEventListener('load', display_questions);
+function display_questions() {
+    fetch('http://127.0.0.1:5000/api/v2/users/questions', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }})
+    .then(response =>  response.json())
+    .then(data => {
+        let parentNode = document.getElementById('tab');
+        let node = document.createElement('table');
+        let new_data = data.Questions;
+        // console.log(new_data)
+        for(var i in new_data){
+            console.log(new_data[i]["id"]);
+            // node.innerHTML = `
+            var my_node = `
+            <tr>
+                    <td>${new_data[i]["question"]}</td>
+                    <td style="font-size:10px">${new_data[i]["date_posted"]}</td>
+                </tr>`;
+            // node.classList.add("item");
+            parentNode.insertAdjacentHTML('afterbegin', my_node);
+            // parentNode.appendChild(node)
+            // console.log(parentNode)
+        };
+
+    });
+}
+
