@@ -1,3 +1,6 @@
+$(window).on('load', function(){
+    $('.loader').delay(1000).fadeOut('slow')
+})
 import api from './api';
 
 const email = document.getElementById('email')
@@ -60,12 +63,6 @@ function response(){
 	}
 	return response
 }
-
-// function authSuccessful(res) {
-//     alert('success', 'Arnold!', 'Welcome, ' + res.data.user.email + '.');
-//     authToken.setItems(res.setItem);
-//     $state.go("connections");
-// }
 
 function setItems(token){	
 	localStorage.setItem('token', token);	

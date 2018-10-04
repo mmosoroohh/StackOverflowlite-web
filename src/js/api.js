@@ -1,6 +1,7 @@
 import { get } from "https";
 
-const baseUrl = 'http://127.0.0.1:5000/api/v2';
+// const baseUrl = 'http://127.0.0.1:5000/api/v2';
+const baseUrl = 'https://stackoverflow-lite-v2.herokuapp.com/api/v2';
 
 const api = {
     
@@ -11,7 +12,7 @@ const api = {
         headers: {
             Authorization: `Bearer ${token}`,
             "content-type": "application/json",
-            mode: 'no-cors'      
+            "Access-Control-Allow-Origin": "*"     
         }
     });
   },

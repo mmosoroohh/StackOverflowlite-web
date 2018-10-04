@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100, 200,300,400,500,600,700,
     800,900|Coromorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+    <div class="loader"></div>
     <!-- Header Area -->
     <header>
         <a href="index.html" class="header-brand">StackOverflow-lite</a>
@@ -31,7 +34,7 @@
             <button id="post_answer" type="submit">Post Answer</button>
         </div>
     <br/>
-        <div class="card" style="align-content: center" id="answers">
+        <div id="answers">
             <h4 style="text-align: center">Answers</h4>
         </div>
 

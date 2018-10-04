@@ -1,5 +1,8 @@
-window.addEventListener('load', get_questions);
+$(window).on('load', function(){
+    $('.loader').delay(1000).fadeOut('slow')
+});
 
+window.addEventListener('load', get_questions);
 
 function show_question(data){
     window.location.replace('http://127.0.0.1:42237/view.html');
@@ -9,7 +12,8 @@ function show_question(data){
 }
 
 function get_questions() {
-    fetch('http://127.0.0.1:5000/api/v2/questions', {
+    fetch('https://stackoverflow-lite-v2.herokuapp.com/api/v2/questions',{
+    // fetch('http://127.0.0.1:5000/api/v2/questions', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -25,9 +29,10 @@ function get_questions() {
 
             // let span_id = document.createElement("span");
             // span_id.innerHTML = new_data[i]["id"];
+            let qId = new_data[i]['id'];
 
             let span_question = document.createElement("span");
-            span_question.innerHTML = `<a href="view.html?id=${new_data[i]['id']}">${new_data[i]["question"]}</a>`;
+            span_question.innerHTML = `<a href="view.html?id=${qId}" id="question_body${qId}">${new_data[i]["question"]}</a>`;
 
             let p_date = document.createElement("p");
             p_date.innerHTML = new_data[i]["date_posted"];
@@ -36,11 +41,22 @@ function get_questions() {
 
             let button_edit = document.createElement("button");
             button_edit.innerHTML = "Edit"; 
+            let questionIdAttribute = document.createAttribute('data-id');
+            questionIdAttribute.value = qId;
+
+            button_edit.setAttributeNode(questionIdAttribute)
+            button_edit.classList.add("btn")
 
             p_actions.appendChild(button_edit);
 
             let button_delete = document.createElement("button");
             button_delete.innerHTML = "Delete";
+            let a = document.createAttribute("data-id");
+            a.value = qId;
+
+            button_delete.setAttributeNode(a);
+            button_delete.classList.add("btn")
+
 
             p_actions.appendChild(button_delete);
 
@@ -50,7 +66,7 @@ function get_questions() {
             div.appendChild(p_actions);
 
             button_edit.addEventListener("click", function(){
-                modifyQuestion(new_data[i]['id'])
+                modifyQuestion(button_edit)
             });
 
             button_delete.addEventListener("click", function(){
@@ -62,10 +78,14 @@ function get_questions() {
 });
 }
 
-
-// Userr can modify a question
+// User can modify a question
 function modifyQuestion(card){
-    fetch("http://127.0.0.1:5000/api/v2/questions/"+id, {
+    let qId = card.getAttribute('data-id');
+    let questionBody = document.getElementById('question_body'+qId)
+    console.warn(questionBody.innerHTML)
+    console.warn(qId);
+    fetch("https://stackoverflow-lite-v2.herokuapp.com/api/v2/questions/"+id, {
+    // fetch("http://127.0.0.1:5000/api/v2/questions/"+id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -101,7 +121,8 @@ function toJSON(card) {
 // User delete a question
 function deleteQuestion(id){
     if(confirm("Do you want to delete this question?")){
-        fetch("http://127.0.0.1:5000/api/v2/questions/"+id, {
+        fetch("https://stackoverflow-lite-v2.herokuapp.com/api/v2/questions/"+id, {
+        // fetch("http://127.0.0.1:5000/api/v2/questions/"+id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

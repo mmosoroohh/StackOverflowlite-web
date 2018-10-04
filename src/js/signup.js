@@ -1,3 +1,7 @@
+$(window).on('load', function(){
+    $('.loader').delay(1000).fadeOut('slow')
+})
+
 import api from './api';
 
 const name = document.getElementById('name')

@@ -31,33 +31,6 @@ post_answer.addEventListener('click', function(e) {
     }
 })
 
-
-// // View Answers
-// function get_answers(){
-//     fetch("http://127.168.0.0.1:5000/api/v2/question_id/answers",   {
-//         method: "GET",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Authorization": "Bearer " + localStorage.getItem("token")
-//         }
-//     }).then(response => response.json())
-//     .then(data => {
-//         let answers = document.getElementById("answers").querySelector("card");
-//         answers.innerHTML =
-//         `   
-//             ${ data.answer.map( answer => `
-//                             <div>    
-//                                 <span>${ answers.answer_id }</span>
-//                                 <span>${ answer.answer }</span>
-//                                 <p>${ answer.date_posted }</p>
-//                                 <span>${ answer.status }</span>
-//                                 <p>${ answer.user_id }</p>
-//                             </div>
-//                             `).join("") }
-//         `;
-//     });
-// }
-
 // Upvote an answer
 function upvote(answer_id){
     fetch("http://127.0.0.1:5000/api/v2/answers"+answer_id+"/upvote", {

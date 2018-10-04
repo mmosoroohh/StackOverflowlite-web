@@ -1,3 +1,7 @@
+$(window).on('load', function(){
+    $('.loader').delay(1000).fadeOut('slow')
+})
+
 // User get a single question
 function getParam(param){
     return new URLSearchParams(window.location.search).get(param);
@@ -5,7 +9,8 @@ function getParam(param){
 
 var question_id = getParam('id');
 function singleQuestion(){
-    fetch("http://127.0.0.1:5000/api/v2/questions/"+question_id, {
+    // fetch("http://127.0.0.1:5000/api/v2/questions/"+question_id, {
+    fetch("https://stackoverflow-lite-v2.herokuapp.com/api/v2/questions/"+question_id, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -20,7 +25,8 @@ function singleQuestion(){
 
 // Display Answers
 function loadAnswers(){
-            fetch("http://127.0.0.1:5000/api/v2/questions/"+question_id+"/answers",   {
+            // fetch("http://127.0.0.1:5000/api/v2/questions/"+question_id+"/answers",   {
+            fetch("https://stackoverflow-lite-v2.herokuapp.com/api/v2/questions/"+question_id+"/answers", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,11 +37,15 @@ function loadAnswers(){
                 let answers = document.getElementById("answers");
                 let content = `
                     ${data.Answers.map(answer => `
-                    <div>
+                    <div class="card" style="color: #80808F;">
                         <span>
                             ${ answer.answer }
                         </span>
-                        <h5 style="color:grey; font-size:15px; text-align: right">Posted by: ${ answer.name }</h5>
+                        <div class="upvote">
+                            <a class="upvote my-button"><i class="fas fa-thumbs-up"></i></a>
+                            <a class="downvote my-button"><i class="fas fa-thumbs-down"></i></a>
+                        </div>
+                        <h5 style="color:grey; font-size:15px; text-align:right;">Posted by: ${ answer.name }</h5>
                     </div>
                     `).join("")
                     }
@@ -49,9 +59,11 @@ function loadAnswers(){
             });
 }
 
+
 // Upvote an answer
 function upvote(answer_id){
-    fetch("http://127.0.0.1:5000/api/v2/answers"+answer_id+"/upvote", {
+    // fetch("http://127.0.0.1:5000/api/v2/answers"+answer_id+"/upvote", {
+    fetch("https://stackoverflow-lite-v2.herokuapp.com/api/v2/answers"+answer_id+"/upvote", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -74,7 +86,8 @@ function upvote(answer_id){
 
 // Downvote an answer
 function downvote(answer_id){
-    fetch("http://127.0.0.1:5000/api/v2/answers"+answer_id+"/downvote", {
+    // fetch("http://127.0.0.1:5000/api/v2/answers"+answer_id+"/downvote", {
+    fetch("https://stackoverflow-lite-v2.herokuapp.com/api/v2/answers"+answer_id+"/downvote", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

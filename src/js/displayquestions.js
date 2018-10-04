@@ -1,6 +1,11 @@
+$(window).on('load', function(){
+    $('.loader').delay(1000).fadeOut('slow')
+})
+
 window.addEventListener('load', display_questions);
 function display_questions() {
-    fetch('http://127.0.0.1:5000/api/v2/users/questions', {
+    fetch('https://stackoverflow-lite-v2.herokuapp.com/api/v2/users/questions', {
+    // fetch('http://127.0.0.1:5000/api/v2/users/questions',{
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

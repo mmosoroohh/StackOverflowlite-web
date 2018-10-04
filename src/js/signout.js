@@ -1,6 +1,10 @@
+$(window).on('load', function(){
+    $('.loader').delay(1000).fadeOut('slow')
+})
+
 function signout()	{
 
-	fetch('http://127.0.0.1:5000/api/v2/auth/signout', {
+	fetch('https://stackoverflow-lite-v2.herokuapp.com/api/v2/questions/api/v2/auth/signout', {
 		method: "POST",
 		headers: {
 			'Content-Type': 'application/json',
