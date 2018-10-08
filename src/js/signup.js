@@ -36,10 +36,43 @@ password.addEventListener("change", e => {
 signup.addEventListener('click', function(e) {
     e.preventDefault();
     if(data.name && data.email && data.password) {
-        api.post('/auth/signup', data).then(res => res.json()).then(data => console.log(data))
+        api.post('/auth/signup', data)
+        .then(res => res.json())
+        .then(data => {
+            if (data.message === 'New user registered!') {
+
+            // call the form
+            const signupform = document.getElementById('signup-user');
+            loadMessage(data.message, 'success', signupform)
+            };
+            window.location.href = "/signin.html";
+        })
     } else {
         console.log('All fields are required')
     }
 })
 
+function loadMessage(message, classname, insertbfr) {
+    removeMessage(classname);
+    // Create a div element
+    const div = document.createElement('div');
+    div.className = classname;
+    div.textContent = message;
+    // Call the main tag
+    const main = document.getElementById('signupMain');
+    main.insertBefore(div, insertbfr);
+    // Remove after 1.5 seconds
+    setTimeout(() => {
+        main.removeChild(div);
+    }, 1500);
+}
+
+function removeMessage(classname) {
+    // Call the main tag
+    const main = document.getElementById('signupMain');
+    const message = document.querySelector(`.${classname}`);
+    if (message) {
+        main.removeChild(message);
+    }
+}
 

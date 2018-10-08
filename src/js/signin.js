@@ -29,39 +29,28 @@ signin.addEventListener('click', function(e) {
         api.post('/auth/signin', user)
         .then(res => res.json())
         .catch(error => console.error('Error '+ error))
-        .then(user => {console.log(user);
+        .then(user => {
+            if (user.message === 'Logged in successfully!') {
+
+                // call form
+                const signinform = document.getElementById('signin-user');
+                loadMessage(user.message, 'success', signinform)
+            };
             setItems(user.token);
             window.location.href = "/dashboard.html";
         })
     } else {
-        let err = document.getElementById('err-message')
-        err.style.backgroundColor = "Block";
-        err.style.color = 'black';
-        err.innerHTML = user.message;
         console.log("All fields are required!")
         window.location.href = "/signin.html"
     }
 })
         
-
-
-function toJSON(form) {
-    let formData = new FormData(form);
-    let object = {};
-
-    formData.forEach(function (value, key) {
-        object[key] = value;
-    });
-
-    return object;
-}
-
 //return error message response
 function response(){
-	if(!response.ok){
+	if(!res.ok){
 		throw new Error("Please enter valid information..")
 	}
-	return response
+	return res
 }
 
 function setItems(token){	
@@ -72,5 +61,29 @@ function getItems(){
 	let token = localStorage.getItem('token');
 	return {
 		'token': token
+    }
+}
+
+function loadMessage(message, classname, insertbfr) {
+    removeMessage(classname);
+    // Create a div element
+    const div = document.createElement('div');
+    div.className = classname;
+    div.textContent = message;
+    // Call the main tag
+    const main = document.getElementById('signinMain');
+    main.insertBefore(div, insertbfr);
+    // remove after 1.5 seconds
+    setTimeout(() => {
+        main.removeChild(div);
+    }, 1500);
+}
+
+function removeMessage(classname) {
+    // Call the main tag
+    const main = document.getElementById('signinMain');
+    const message = document.querySelector(`.${classname}`);
+    if (message) {
+        main.removeChild(message);
     }
 }

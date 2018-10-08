@@ -17,7 +17,7 @@ function display_questions() {
         let new_data = data.Questions;
         // console.log(new_data)
         for(var i in new_data){
-            console.log(new_data[i]["id"]);
+            // console.log(new_data[i]["id"]);
             // node.innerHTML = `
             var my_node = `
             <div class="card">

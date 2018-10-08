@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100, 200,300,400,500,600,700,
     800,900|Coromorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -18,20 +19,22 @@
         <nav>
             <ul>
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a class="active" href="question.html">Post Question</a></li>
+                <li><a class="active" href="edit.html">Edit Question</a></li>
                 <li><a href="signin.html">Sign Out</a></li>
             </ul>
         </nav>
     </header>
-    <!--Main Area-->
-    <main id="questionMain">
-        <h2 style="text-align: center">Post a Question</h2>
-        <div id="post-question" class="card" method="POST" enctype="multipart/carddata" style="align-content: left">
-            <textarea name="question" id="question" placeholder="Write your question..." style="height: 200px;"></textarea>
-            <button id="postquestion" type="submit">Post a Question</button>
+    <!--Main Showcase -->
+    <main>
+        <h2 style="text-align: center">Question</h2>
+        <div class="card" style="align-content: left">
+            <p id="question"></p>
+            <label for="edit-question"><strong>Edit Question</strong></label>
+            <textarea id="edit" name="edit-question" placeholder="Update Question..." style="height: 200px"></textarea>
+            <button id="edit_question" type="submit">Post Answer</button>
         </div>
     </main>
-    <script src="./public/dist/post_question.bundle.js"></script>
+    <script src="./public/dist/get_questions.bundle.js"></script>
 </body>
 </html>
 

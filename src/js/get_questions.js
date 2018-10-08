@@ -45,7 +45,7 @@ function get_questions() {
             questionIdAttribute.value = qId;
 
             button_edit.setAttributeNode(questionIdAttribute)
-            button_edit.classList.add("btn")
+            button_edit.classList.add("btn-e")
 
             p_actions.appendChild(button_edit);
 
@@ -55,7 +55,7 @@ function get_questions() {
             a.value = qId;
 
             button_delete.setAttributeNode(a);
-            button_delete.classList.add("btn")
+            button_delete.classList.add("btn-d")
 
 
             p_actions.appendChild(button_delete);
