@@ -4,7 +4,7 @@ $(window).on('load', function () {
 
 import api from './api';
 
-const postquestion = document.getElementById('question')
+const submitquestion = document.getElementById('submitquestion')
 
 
 let data = {
@@ -18,7 +18,7 @@ question.addEventListener("change", e => {
 });
 
 
-postquestion.addEventListener('click', function (e) {
+submitquestion.addEventListener('click', function (e) {
     console.log("data", data)
     e.preventDefault();
     if (data.question) {

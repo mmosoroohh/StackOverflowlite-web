@@ -5,7 +5,7 @@ function getParam(param){
 // Post an answer to a question
 import api from './api';
 
-const post_answer = document.getElementById('answer')
+const post_answer = document.getElementById('post_answer')
 
 var question_id = getParam('id');
 
