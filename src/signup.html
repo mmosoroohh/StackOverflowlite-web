@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>StackOverflow-lite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100, 200,300,400,500,600,700,
+    800,900|Coromorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="loader"></div>
+    <!-- Header Area -->
+    <header>
+        <a href="index.html" class="header-brand">StackOverflow-lite</a>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a class="active" href="signup.html">Sign Up</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Showcase -->
+    <main id= "signupMain">
+        <div class="bg-image"></div>
+        <form id="signup-user" class="loginBox" method="POST" enctype="multipart/formdata" style="max-width: 500px; margin: auto">
+            <h2>Register Form</h2>
+            <p>Please fill in the form to create an account.</p>
+            <p id="err-message"></p>
+            <br>
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Full Names" id="name" required>
+            </div>
+            <div class="input-container">
+                <i class="fa fa-envelope icon"></i>
+                <input class="input-field" type="text" placeholder="you@example.com" id="email" required>
+            </div>
+            <small>
+                We'll occassionally send updates about your account to this inbox. Never share your email address with anyone.
+            </small>
+            </br>
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field" type="password" placeholder="Create a password" id="password" required>
+            </div>
+            <small>
+                Use at least one uppercase letter, one numeral, special character and seven characters.
+            </small>
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field" type="password" placeholder="Confirm pasword" id="confirm_password" required>
+            </div>
+            <small>
+                By clicking "Sign Up", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>
+            </small>
+        </br>
+            <button id="signup" type="submit" class="btn-1">Sign Up</button>
+            <small>Already have an account!<a href="signin.html"> Sign In</a></small>
+        </form>
+
+    </main>
+    <script src="./public/dist/signup.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>StackOverflow-lite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100, 200,300,400,500,600,700,
+    800,900|Coromorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="loader"></div>
+    <!-- Header Area -->
+    <header>
+        <a href="index.html" class="header-brand">StackOverflow-lite</a>
+        <nav>
+            <ul>
+                <li><a class="active" href="dashboard.html">Dashboard</a></li>
+                <li><a href="view_all.html">Questions</a></li>
+                <li><a href="signin.html">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Showcase -->
+    <main id="dashboardwrapper">
+        <a href="question.html" style="align-content: right" class="btn">Post a Question</a>
+        <input type="text" id="myInput"  placeholder="Search Questions..." maxlength="50" oninput="filterQuestions(this)">
+        <h3>My Questions Registry</h3>
+        <div class="card">
+            <div id="tab">
+            </div>
+        </div>
+        <a href="#" class="previous">&laquo; Previous </a>
+        <a href="#" class="next">Next &raquo;</a>
+        
+    </main>
+    <script src="./public/dist/get_questions.bundle.js"></script>
+    <script src="./public/dist/search.bundle.js"></script>
+</body>
+</html>
+
